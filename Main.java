@@ -18,7 +18,6 @@ public class Main extends JFrame {
         cp.add(board, BorderLayout.CENTER);
 
         // Add a button to the south to re-start the game via board.newGame()
-        // ......
 
         // Initialize the game board to start the game
         board.newGame();
@@ -33,6 +32,7 @@ public class Main extends JFrame {
     public static void main(String[] args) {
         // [TODO 1] Check "Swing program template" on how to run
         //  the constructor of "SudokuMain"
-        // .........
+        Main game = new Main();
+        game.board.newGame();
     }
 }

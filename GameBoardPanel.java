@@ -31,10 +31,15 @@ public class GameBoardPanel extends JPanel {
 
         // [TODO 3] Allocate a common listener as the ActionEvent listener for all the
         //  Cells (JTextFields)
-        // .........
-
+            CellInputListener listener = new CellInputListener();
         // [TODO 4] Adds this common listener to all editable cells
-        // .........
+            for (int row = 0; row < SudokuConstants.GRID_SIZE; row++){
+                for (int col = 0; col < SudokuConstants.GRID_SIZE; col++){
+                    if (cells[row][col].isEditable()) {
+                        cells[row][col].addActionListener(listener);
+                    }
+                }
+            }
 
         super.setPreferredSize(new Dimension(BOARD_WIDTH, BOARD_HEIGHT));
     }
@@ -71,5 +76,25 @@ public class GameBoardPanel extends JPanel {
     }
 
     // [TODO 2] Define a Listener Inner Class for all the editable Cells
-    // .........
+    private class CellInputListener implements ActionListener {
+        public void actionPerformed(ActionEvent e){
+            Cell sourceCell = (Cell)e.getSource();
+
+            int numberIn = Integer.parseInt(sourceCell.getText());
+            System.out.println("You entered " + sourceCell);
+
+            if (numberIn == sourceCell.number) {
+                sourceCell.status = CellStatus.CORRECT_GUESS;
+            }
+            else {
+                sourceCell.status = CellStatus.WRONG_GUESS;
+            }
+            sourceCell.paint();
+
+            if (isSolved()) {
+                JOptionPane.showMessageDialog(null,"You have finished the puzzle!","Congratulations!",
+                        JOptionPane.INFORMATION_MESSAGE);
+            }
+        }
+    }
 }
