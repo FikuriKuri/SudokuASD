@@ -9,7 +9,10 @@ public class Main extends JFrame {
 
     // private variables
     GameBoardPanel board = new GameBoardPanel();
+    JPanel southPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
     JButton btnNewGame = new JButton("New Game");
+    JButton restart = new JButton("Restart");
+    int cellsToGuess;
 
     // Constructor
     public Main() {
@@ -23,11 +26,21 @@ public class Main extends JFrame {
         btnNewGame.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int cellsToGuess = selectDifficulty();
+                selectDifficulty();
                 board.newGame(cellsToGuess);
             }
         });
-        cp.add(btnNewGame, BorderLayout.SOUTH);
+
+        restart.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                board.newGame(cellsToGuess);
+            }
+        });
+        cp.add(southPanel, BorderLayout.SOUTH);
+
+        southPanel.add(btnNewGame);
+        southPanel.add(restart);
 
         int cellsToGuess = selectDifficulty();
         board.newGame(cellsToGuess);
@@ -43,6 +56,7 @@ public class Main extends JFrame {
         setTitle("Sudoku");
         setVisible(true);
     }
+
     private int selectDifficulty() {
         String[] options = {"Easy", "Medium", "Hard"};
         int choice = JOptionPane.showOptionDialog(
@@ -57,9 +71,10 @@ public class Main extends JFrame {
         );
 
         switch (choice) {
-            case 1: return 40; // Medium
-            case 2: return 60; // Hard
-            default: return 20; // Easy
+            case 1: cellsToGuess = 40; // Medium
+            case 2: cellsToGuess =  60; // Hard
+            default: cellsToGuess =  20; // Easy
+                return cellsToGuess;
         }
     }
 
