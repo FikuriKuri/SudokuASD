@@ -75,6 +75,45 @@ public class GameBoardPanel extends JPanel {
         }
         return true;
     }
+    private boolean isValidMove(int row, int col, int number) {
+        // Periksa baris
+        for (int c = 0; c < SudokuConstants.GRID_SIZE; ++c) {
+            if (c != col && cells[row][c].number == number) {
+                return false;
+            }
+        }
+        // Periksa kolom
+        for (int r = 0; r < SudokuConstants.GRID_SIZE; ++r) {
+            if (r != row && cells[r][col].number == number) {
+                return false;
+            }
+        }
+        // Periksa sub-kisi
+        int startRow = (row / SudokuConstants.SUBGRID_SIZE) * SudokuConstants.SUBGRID_SIZE;
+        int startCol = (col / SudokuConstants.SUBGRID_SIZE) * SudokuConstants.SUBGRID_SIZE;
+        for (int r = startRow; r < startRow + SudokuConstants.SUBGRID_SIZE; ++r) {
+            for (int c = startCol; c < startCol + SudokuConstants.SUBGRID_SIZE; ++c) {
+                if ((r != row || c != col) && cells[r][c].number == number) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    private void highlightSameNumber(int number) {
+        for (int row = 0; row < SudokuConstants.GRID_SIZE; ++row) {
+            for (int col = 0; col < SudokuConstants.GRID_SIZE; ++col) {
+                if (cells[row][col].number == number) {
+                    cells[row][col].setBackground(Cell.BG_CORRECT_GUESS);
+                } else if (cells[row][col].status == CellStatus.TO_GUESS) {
+                    cells[row][col].setBackground(Cell.BG_TO_GUESS);
+                }
+            }
+        }
+    }
+
+
 
     // [TODO 2] Define a Listener Inner Class for all the editable Cells
     private class CellInputListener implements ActionListener {
@@ -84,12 +123,21 @@ public class GameBoardPanel extends JPanel {
 
             try {
                 int numberIn = Integer.parseInt(sourceCell.getText());
+                if (numberIn < 1 || numberIn > 9) {
+                    throw new NumberFormatException("Out of range");
+                }
 
-                if (numberIn == sourceCell.number) {
+                // Set input as the cell's number temporarily
+                sourceCell.number = numberIn;
+
+                if (isValidMove(sourceCell.row, sourceCell.col, numberIn)) {
                     sourceCell.status = CellStatus.CORRECT_GUESS;
+                    highlightSameNumber(numberIn); // Highlight cells with the same number
                 } else {
                     sourceCell.status = CellStatus.WRONG_GUESS;
+                    sourceCell.setBackground(Cell.BG_WRONG_GUESS);
                 }
+
                 sourceCell.paint();
 
                 if (isSolved()) {

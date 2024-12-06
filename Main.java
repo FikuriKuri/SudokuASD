@@ -1,6 +1,10 @@
 import java.awt.*; // Untuk BorderLayout
 import java.awt.event.*; // Untuk ActionListener dan ActionEvent
 import javax.swing.*; // Untuk JFrame, JButton, dan komponen Swing lainnya
+import javax.sound.sampled.*;
+import java.io.File;
+import java.io.IOException;
+
 /**
  * The main Sudoku program
  */
@@ -38,6 +42,7 @@ public class Main extends JFrame {
             }
         });
         cp.add(southPanel, BorderLayout.SOUTH);
+        playBackgroundMusic();
 
         southPanel.add(btnNewGame);
         southPanel.add(restart);
@@ -75,6 +80,24 @@ public class Main extends JFrame {
             case 2: cellsToGuess =  60; // Hard
             default: cellsToGuess =  20; // Easy
                 return cellsToGuess;
+        }
+    }
+    private void playBackgroundMusic() {
+        try {
+            // Tentukan file musik (gunakan format WAV)
+            File musicFile = new File("Soundtreck.wav");
+
+            // Membaca file musik
+            AudioInputStream audioStream = AudioSystem.getAudioInputStream(musicFile);
+            Clip clip = AudioSystem.getClip();
+            clip.open(audioStream);
+
+            // Memainkan musik
+            clip.start();
+            clip.loop(Clip.LOOP_CONTINUOUSLY);  // Memutar musik secara berulang
+
+        } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
+            e.printStackTrace();  // Menangani kesalahan jika file musik tidak ditemukan atau format tidak didukung
         }
     }
 
