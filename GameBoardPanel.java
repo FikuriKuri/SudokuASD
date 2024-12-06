@@ -31,15 +31,15 @@ public class GameBoardPanel extends JPanel {
 
         // [TODO 3] Allocate a common listener as the ActionEvent listener for all the
         //  Cells (JTextFields)
-            CellInputListener listener = new CellInputListener();
+        CellInputListener listener = new CellInputListener();
         // [TODO 4] Adds this common listener to all editable cells
-            for (int row = 0; row < SudokuConstants.GRID_SIZE; row++){
-                for (int col = 0; col < SudokuConstants.GRID_SIZE; col++){
-                    if (cells[row][col].isEditable()) {
-                        cells[row][col].addActionListener(listener);
-                    }
+        for (int row = 0; row < SudokuConstants.GRID_SIZE; row++){
+            for (int col = 0; col < SudokuConstants.GRID_SIZE; col++){
+                if (cells[row][col].isEditable()) {
+                    cells[row][col].addActionListener(listener);
                 }
             }
+        }
 
         super.setPreferredSize(new Dimension(BOARD_WIDTH, BOARD_HEIGHT));
     }
@@ -48,9 +48,10 @@ public class GameBoardPanel extends JPanel {
      * Generate a new puzzle; and reset the game board of cells based on the puzzle.
      * You can call this method to start a new game.
      */
-    public void newGame() {
+    public void newGame(int cellsToGuess) {
         // Generate a new puzzle
-        puzzle.newPuzzle(2);
+
+        puzzle.newPuzzle(cellsToGuess);
 
         // Initialize all the 9x9 cells, based on the puzzle.
         for (int row = 0; row < SudokuConstants.GRID_SIZE; ++row) {
@@ -77,24 +78,30 @@ public class GameBoardPanel extends JPanel {
 
     // [TODO 2] Define a Listener Inner Class for all the editable Cells
     private class CellInputListener implements ActionListener {
-        public void actionPerformed(ActionEvent e){
-            Cell sourceCell = (Cell)e.getSource();
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            Cell sourceCell = (Cell) e.getSource();
 
-            int numberIn = Integer.parseInt(sourceCell.getText());
-            System.out.println("You entered " + sourceCell);
+            try {
+                int numberIn = Integer.parseInt(sourceCell.getText());
 
-            if (numberIn == sourceCell.number) {
-                sourceCell.status = CellStatus.CORRECT_GUESS;
-            }
-            else {
-                sourceCell.status = CellStatus.WRONG_GUESS;
-            }
-            sourceCell.paint();
+                if (numberIn == sourceCell.number) {
+                    sourceCell.status = CellStatus.CORRECT_GUESS;
+                } else {
+                    sourceCell.status = CellStatus.WRONG_GUESS;
+                }
+                sourceCell.paint();
 
-            if (isSolved()) {
-                JOptionPane.showMessageDialog(null,"You have finished the puzzle!","Congratulations!",
-                        JOptionPane.INFORMATION_MESSAGE);
+                if (isSolved()) {
+                    JOptionPane.showMessageDialog(null, "You have finished the puzzle!", "Congratulations!",
+                            JOptionPane.INFORMATION_MESSAGE);
+                }
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(null, "Please enter a valid number between 1 and 9.", "Invalid Input",
+                        JOptionPane.WARNING_MESSAGE);
+                sourceCell.setText("");
             }
         }
+
     }
 }
