@@ -7,13 +7,13 @@ public class Cell extends JTextField {
     private static final long serialVersionUID = 1L;
 
     // Define constants for colors and fonts
-    public static final Color BG_GIVEN = new Color(220, 220, 220); // Light Gray
-    public static final Color FG_GIVEN = Color.BLACK;             // Black text
-    public static final Color FG_NOT_GIVEN = Color.DARK_GRAY;     // Dark Gray text
-    public static final Color BG_TO_GUESS = Color.WHITE;          // White for editable cells
-    public static final Color BG_CORRECT_GUESS = new Color(144, 238, 144); // Light Green
-    public static final Color BG_WRONG_GUESS = new Color(255, 102, 102);   // Light Red
-    public static final Font FONT_NUMBERS = new Font("Arial", Font.BOLD, 26);
+    public static final Color BG_GIVEN = new Color(240, 240, 240); // RGB
+    public static final Color FG_GIVEN = Color.BLACK;
+    public static final Color FG_NOT_GIVEN = Color.GRAY;
+    public static final Color BG_TO_GUESS  = Color.YELLOW;
+    public static final Color BG_CORRECT_GUESS = new Color(0, 216, 0);
+    public static final Color BG_WRONG_GUESS   = new Color(216, 0, 0);
+    public static final Font FONT_NUMBERS = new Font("OCR A Extended", Font.PLAIN, 28);
 
     int row, col;
     int number;
