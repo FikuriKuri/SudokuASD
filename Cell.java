@@ -46,21 +46,21 @@ public class Cell extends JTextField {
     /** This Cell (JTextField) paints itself based on its status */
     public void paint() {
         if (status == CellStatus.GIVEN) {
-            // Inherited from JTextField: Set display properties
             super.setText(number + "");
             super.setEditable(false);
             super.setBackground(BG_GIVEN);
             super.setForeground(FG_GIVEN);
         } else if (status == CellStatus.TO_GUESS) {
-            // Inherited from JTextField: Set display properties
             super.setText("");
             super.setEditable(true);
             super.setBackground(BG_TO_GUESS);
             super.setForeground(FG_NOT_GIVEN);
-        } else if (status == CellStatus.CORRECT_GUESS) {  // from TO_GUESS
+        } else if (status == CellStatus.CORRECT_GUESS) {
             super.setBackground(BG_CORRECT_GUESS);
-        } else if (status == CellStatus.WRONG_GUESS) {    // from TO_GUESS
+        } else if (status == CellStatus.WRONG_GUESS) {
             super.setBackground(BG_WRONG_GUESS);
         }
     }
+
 }
+
