@@ -1,6 +1,6 @@
 import java.awt.*; // Untuk BorderLayout
 import java.awt.event.*; // Untuk ActionListener dan ActionEvent
-import javax.swing.*; // Untuk JFrame, JButton, dan komponen Swing lainnya
+import javax.swing.*; // Untuk JFrame, JButton, dan komponen Swing
 import javax.sound.sampled.*;
 import java.io.File;
 import java.io.IOException;
