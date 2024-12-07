@@ -26,6 +26,7 @@ public class Main extends JFrame {
     JPanel southPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
     JButton btnNewGame = new JButton("New Game");
     JButton restart = new JButton("Restart");
+    JButton exit = new JButton("Exit");
     int cellsToGuess;
 
     // Constructor
@@ -53,11 +54,19 @@ public class Main extends JFrame {
                 board.newGame(cellsToGuess);
             }
         });
+
+        exit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
         cp.add(southPanel, BorderLayout.SOUTH);
         playBackgroundMusic();
 
         southPanel.add(btnNewGame);
         southPanel.add(restart);
+        southPanel.add(exit);
 
         int cellsToGuess = selectDifficulty();
         board.newGame(cellsToGuess);
