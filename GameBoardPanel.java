@@ -16,44 +16,34 @@ public class GameBoardPanel extends JPanel {
 
     /** Constructor */
     public GameBoardPanel() {
-        super.setLayout(new BorderLayout());  // Use BorderLayout for placing components
+        super.setLayout(new GridLayout(SudokuConstants.GRID_SIZE, SudokuConstants.GRID_SIZE));
 
-        JPanel gridPanel = new JPanel();
-        gridPanel.setLayout(new GridLayout(SudokuConstants.GRID_SIZE, SudokuConstants.GRID_SIZE)); // GridLayout for cells
-
-        // Allocate the 2D array of Cell and add them into the gridPanel
+        // Initialize the board and add cells
         for (int row = 0; row < SudokuConstants.GRID_SIZE; ++row) {
             for (int col = 0; col < SudokuConstants.GRID_SIZE; ++col) {
                 cells[row][col] = new Cell(row, col);
-                gridPanel.add(cells[row][col]);   // Add cells into gridPanel
+                super.add(cells[row][col]);
             }
         }
 
         // Add the grid panel to the main panel
-        super.add(gridPanel, BorderLayout.CENTER);
-
-        // Create an "Exit" button and add it to the bottom of the window
-        JButton exitButton = new JButton("Exit");
-        exitButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int response = JOptionPane.showConfirmDialog(null, "Are you sure you want to exit?", "Exit", JOptionPane.YES_NO_OPTION);
-                if (response == JOptionPane.YES_OPTION) {
-                    System.exit(0); // Exit the application
+        CellInputListener listener = new CellInputListener();
+        for (int row = 0; row < SudokuConstants.GRID_SIZE; ++row) {
+            for (int col = 0; col < SudokuConstants.GRID_SIZE; ++col) {
+                if (cells[row][col].isEditable()) {
+                    cells[row][col].addActionListener(listener);
                 }
             }
-        });
+        }
 
-        // Add the exit button to the bottom of the panel
-        JPanel buttonPanel = new JPanel();
-        buttonPanel.add(exitButton);
-        super.add(buttonPanel, BorderLayout.SOUTH);
-
-        super.setPreferredSize(new Dimension(BOARD_WIDTH, BOARD_HEIGHT + 50)); // Increased size to accommodate the button
+        super.setPreferredSize(new Dimension(BOARD_WIDTH, BOARD_HEIGHT));
     }
 
     public void newGame(int cellsToGuess) {
+        // Generate a new puzzle
         puzzle.newPuzzle(cellsToGuess);
+
+        // Reset cells WITHOUT re-adding listeners
         for (int row = 0; row < SudokuConstants.GRID_SIZE; ++row) {
             for (int col = 0; col < SudokuConstants.GRID_SIZE; ++col) {
                 cells[row][col].newGame(puzzle.numbers[row][col], puzzle.isGiven[row][col]);
@@ -122,6 +112,7 @@ public class GameBoardPanel extends JPanel {
         @Override
         public void actionPerformed(ActionEvent e) {
             Cell sourceCell = (Cell) e.getSource();
+            System.out.println("Cell clicked: Row = " + sourceCell.row + ", Col = " + sourceCell.col);
 
             try {
                 int numberIn = Integer.parseInt(sourceCell.getText());
@@ -136,16 +127,17 @@ public class GameBoardPanel extends JPanel {
                     highlightSameNumber(numberIn);
                 } else {
                     sourceCell.status = CellStatus.WRONG_GUESS;
-                    sourceCell.setBackground(Cell.BG_WRONG_GUESS);
                 }
 
                 sourceCell.paint();
 
                 if (isSolved()) {
-                    JOptionPane.showMessageDialog(null, "You have finished the puzzle!", "Congratulations!", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "You have finished the puzzle!", "Congratulations!",
+                            JOptionPane.INFORMATION_MESSAGE);
                 }
             } catch (NumberFormatException ex) {
-                JOptionPane.showMessageDialog(null, "Please enter a valid number between 1 and 9.", "Invalid Input", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Please enter a valid number between 1 and 9.", "Invalid Input",
+                        JOptionPane.WARNING_MESSAGE);
                 sourceCell.setText("");
             }
         }
