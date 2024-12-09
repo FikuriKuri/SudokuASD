@@ -1,0 +1,247 @@
+[33mcommit 2872b8d69eca383e6d0ba4d80b7fbd0ec8ed87b5[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Merge: 8dc9708 6d10f30
+Author: FikuriKuri <fikrimuhammad294@gmail.com>
+Date:   Mon Dec 9 16:15:23 2024 +0700
+
+    Merge branch 'main' of https://github.com/FikuriKuri/SudokuASD
+
+[33mcommit 8dc97082a92c9d571ead5e6d0166f1211d575627[m
+Author: FikuriKuri <fikrimuhammad294@gmail.com>
+Date:   Sat Dec 7 19:54:00 2024 +0700
+
+    Update Main.java, exit button
+    (Fikri)
+
+[33mcommit 0d6ea7cedb13cf50b59b57e714289fcb9ee3a69b[m
+Author: FikuriKuri <fikrimuhammad294@gmail.com>
+Date:   Sat Dec 7 19:51:19 2024 +0700
+
+    Update Main.java, exit button
+    (Fikri)
+
+[33mcommit 842286eaaf75f5503ed49b81b065d5ac7cbfa5e5[m
+Author: FikuriKuri <fikrimuhammad294@gmail.com>
+Date:   Sat Dec 7 19:30:08 2024 +0700
+
+    Update header
+    (Fikri)
+
+[33mcommit 91890f5d7d65210f4485bbf88c3ae5fe1a3152f2[m
+Author: FikuriKuri <fikrimuhammad294@gmail.com>
+Date:   Sat Dec 7 19:27:46 2024 +0700
+
+    Update Main.java, GameBoardPanel.java
+    Add MenuBar.java
+    (Fikri)
+
+[33mcommit b0228d2aedb94531931da2bf65e3b7fa7f2d8c4c[m
+Merge: eb670b5 264b18e
+Author: FikuriKuri <fikrimuhammad294@gmail.com>
+Date:   Fri Dec 6 23:45:48 2024 +0700
+
+    Merge remote-tracking branch 'origin/main'
+
+[33mcommit 264b18eba2d69832b510e7e5ed8009305d86c912[m
+Author: mew1ng <adityowardhana@gmail.com>
+Date:   Fri Dec 6 23:42:26 2024 +0700
+
+    Commit Exit
+    (Adityo)
+
+[33mcommit eb670b59500474b695bcb6cbe8a08170e75a7c56[m
+Merge: f31e0ec a7efc21
+Author: FikuriKuri <fikrimuhammad294@gmail.com>
+Date:   Fri Dec 6 22:55:00 2024 +0700
+
+    Merge remote-tracking branch 'origin/main'
+
+[33mcommit a7efc21b20456fcad536d61d8e9694ff1c7950cf[m
+Author: MirzaFathi <5026231105@student.its.ac.id>
+Date:   Fri Dec 6 22:54:05 2024 +0700
+
+    Mirza update push
+
+[33mcommit f31e0ec87d1d7558fda2cd33a94ea45cfff3ae15[m
+Merge: 5cd9ba6 216421b
+Author: FikuriKuri <fikrimuhammad294@gmail.com>
+Date:   Fri Dec 6 22:42:51 2024 +0700
+
+    Merge remote-tracking branch 'origin/main'
+    
+    # Conflicts:
+    #       out/production/SudokuASD/Main$2.class
+    #       out/production/SudokuASD/Main.class
+
+[33mcommit 5cd9ba6c30f58e656487196aefe7af160236cc79[m
+Author: FikuriKuri <fikrimuhammad294@gmail.com>
+Date:   Fri Dec 6 22:42:40 2024 +0700
+
+    (Fikri)
+
+[33mcommit 216421bffa20eae096879a1d924d6bfa702abe7e[m
+Author: MirzaFathi <5026231105@student.its.ac.id>
+Date:   Fri Dec 6 22:41:59 2024 +0700
+
+    Mirza update push
+
+[33mcommit c9ab769a93c6345555076f5257f6c2ac74066698[m
+Merge: 081c63d 89c77f1
+Author: MirzaFathi <5026231105@student.its.ac.id>
+Date:   Fri Dec 6 22:39:53 2024 +0700
+
+    Merge remote-tracking branch 'origin/main'
+    
+    # Conflicts:
+    #       Main.java
+    #       out/production/SudokuASD/Cell.class
+
+[33mcommit 081c63d60f13016bf5fdf7cb8fc73ff8faefaf24[m
+Author: MirzaFathi <5026231105@student.its.ac.id>
+Date:   Fri Dec 6 22:38:14 2024 +0700
+
+    Mirza update commit
+
+[33mcommit 60811e3ebd8fc157131d68ecb071b604533f8961[m
+Author: MirzaFathi <5026231105@student.its.ac.id>
+Date:   Fri Dec 6 22:18:30 2024 +0700
+
+    Mirza Add Features (highlight, error message, music)
+
+[33mcommit 61e75913dbdb506bde558ba91491593bb2b1d7a7[m
+Author: MirzaFathi <5026231105@student.its.ac.id>
+Date:   Fri Dec 6 22:18:17 2024 +0700
+
+    Mirza Add Features (highlight, error message, music)
+
+[33mcommit 6119a2275cf1cc920f974571c2a87a93de448506[m
+Author: MirzaFathi <5026231105@student.its.ac.id>
+Date:   Fri Dec 6 22:17:29 2024 +0700
+
+    Mirza Add Features (highlight, error message, music)
+
+[33mcommit 29743b4d6864f59cba4e3d5ac08c4daa74d7f54a[m
+Merge: 69f4fc9 89c77f1
+Author: FikuriKuri <fikrimuhammad294@gmail.com>
+Date:   Fri Dec 6 22:05:29 2024 +0700
+
+    Merge remote-tracking branch 'origin/main'
+
+[33mcommit 89c77f1874e44d924c9cd9c8b6302f0fd44c599d[m
+Author: mew1ng <adityowardhana@gmail.com>
+Date:   Fri Dec 6 22:05:03 2024 +0700
+
+    Commit Beautify
+    (Adityo)
+
+[33mcommit 69f4fc9bc6e9bc705ebfb26abf85f56839cf665c[m
+Merge: 12c94d6 74c570d
+Author: FikuriKuri <fikrimuhammad294@gmail.com>
+Date:   Fri Dec 6 21:56:54 2024 +0700
+
+    Merge remote-tracking branch 'origin/main'
+    
+    # Conflicts:
+    #       out/production/SudokuASD/GameBoardPanel$CellInputListener.class
+    #       out/production/SudokuASD/Main$1.class
+
+[33mcommit 12c94d65bcc1ed950d58e48a5736659157497643[m
+Author: FikuriKuri <fikrimuhammad294@gmail.com>
+Date:   Fri Dec 6 21:56:17 2024 +0700
+
+    (Fikri)
+
+[33mcommit 74c570d213153e86e938f7ff2d5800fae6512f5e[m
+Author: MirzaFathi <5026231105@student.its.ac.id>
+Date:   Fri Dec 6 21:38:16 2024 +0700
+
+    Mirza Add Features (highlight, error message, music)
+
+[33mcommit 090c0daf87f8036939b8837e1558fc32607e0063[m
+Author: FikuriKuri <fikrimuhammad294@gmail.com>
+Date:   Fri Dec 6 21:22:53 2024 +0700
+
+    Update Main.java (Restart dan New Game)
+    (Fikri)
+
+[33mcommit ad1a3029f030e39d1724409fbf800a79415ad645[m
+Author: MirzaFathi <5026231105@student.its.ac.id>
+Date:   Fri Dec 6 20:18:10 2024 +0700
+
+    Mirza Add Features (new game, difficulty)
+
+[33mcommit 99812caf0e935714ccf63f642cee02584b4c24d3[m
+Author: FikuriKuri <fikrimuhammad294@gmail.com>
+Date:   Fri Dec 6 01:16:25 2024 +0700
+
+    Add Puzzle.java
+    (Fikri)
+
+[33mcommit 501668f78de99ff27d01335a64a2e9d84a08192d[m
+Author: mew1ng <adityowardhana@gmail.com>
+Date:   Wed Dec 4 16:20:17 2024 +0700
+
+    Add Main.java (template)
+    (Adityo)
+
+[33mcommit 16a9f6eae6bc36cd9416fccf5d0868d513287ce9[m
+Author: MirzaFathi <5026231105@student.its.ac.id>
+Date:   Wed Dec 4 16:17:00 2024 +0700
+
+    Add GameBoardPanel.java (incomplete)
+    (Mirza)
+
+[33mcommit d8bc2cfd3bec06594f1d6356dd934ece503b44ce[m
+Author: FikuriKuri <fikrimuhammad294@gmail.com>
+Date:   Wed Dec 4 16:15:07 2024 +0700
+
+    Add Puzzle.java
+    (Fikri)
+
+[33mcommit 27a20d2e291d29628f50bc9001d516ffad0297ad[m
+Author: mew1ng <adityowardhana@gmail.com>
+Date:   Wed Dec 4 16:12:23 2024 +0700
+
+    Add Cell.java (template)
+    (Adityo)
+
+[33mcommit ed141bb20a7ea125b6f5696eaa09d24ffe712419[m
+Author: MirzaFathi <5026231105@student.its.ac.id>
+Date:   Wed Dec 4 16:08:56 2024 +0700
+
+    Add CellStatus.java
+    (Mirza)
+
+[33mcommit 0d43b482c3544d03913a579057852668f9dd185b[m
+Merge: d2de11b 3d9be20
+Author: MirzaFathi <5026231105@student.its.ac.id>
+Date:   Wed Dec 4 16:05:56 2024 +0700
+
+    Merge remote-tracking branch 'origin/main'
+    
+    # Conflicts:
+    #       .idea/SudokuASD.iml
+
+[33mcommit d2de11b2ac8fb625a9bb8b34fb3c5adbf5490201[m
+Author: MirzaFathi <5026231105@student.its.ac.id>
+Date:   Wed Dec 4 16:05:33 2024 +0700
+
+    aa
+
+[33mcommit 3d9be208947563f7960deaac6880d73319d61e64[m
+Author: FikuriKuri <144026503+FikuriKuri@users.noreply.github.com>
+Date:   Wed Dec 4 15:33:25 2024 +0700
+
+    Add SudokuConstants.java
+    (Fikri)
+
+[33mcommit 1dcc3b5fbd1487d018c0662125016429d0030f79[m
+Author: FikuriKuri <144026503+FikuriKuri@users.noreply.github.com>
+Date:   Wed Dec 4 15:33:25 2024 +0700
+
+    Initial commit
+
+[33mcommit 6d10f306e7a45a34b11ebf7d5d8595d13c4c21ab[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: FikuriKuri <fikrimuhammad294@gmail.com>
+Date:   Fri Aug 16 18:42:58 2024 +0700
+
+    init Percobaan 1
